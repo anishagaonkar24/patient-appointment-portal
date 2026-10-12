@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const { sequelize } = require('./models');
 
 const doctorRoutes = require('./routes/doctorRoutes');
@@ -9,6 +10,7 @@ const reportRoutes = require('./routes/reportRoutes');
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
